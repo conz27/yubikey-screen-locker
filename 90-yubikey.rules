@@ -1,0 +1,4 @@
+# File: /etc/udev/rules.d/90-yubikey.rules
+
+# Detect if the YubiKey is unplugged; trigger lock-screen script
+ACTION=="remove",ENV{ID_VENDOR}=="Yubico",RUN+="/usr/local/bin/yubikey_gone.sh"
